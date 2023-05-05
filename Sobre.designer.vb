@@ -24,6 +24,7 @@ Partial Class Sobre
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sobre))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Lbl_Seri = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,7 +33,6 @@ Partial Class Sobre
         Me.Lbl_Prod = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +52,16 @@ Partial Class Sobre
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(260, 308)
         Me.Panel1.TabIndex = 0
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(16, 66)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(244, 13)
+        Me.LinkLabel1.TabIndex = 14
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "https://www.linkedin.com/in/eldercrivelariteixeira/"
         '
         'Lbl_Seri
         '
@@ -132,16 +142,6 @@ Partial Class Sobre
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(16, 66)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(142, 13)
-        Me.LinkLabel1.TabIndex = 14
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "http://4usoft.wix.com/4usoft"
         '
         'Sobre
         '

@@ -125,7 +125,7 @@
         If Obj_Gene.Fun_Erro(Msk_Data.Text, 2, 2, Msk_Data) Then Exit Sub
         If Obj_Gene.Fun_Erro(Txt_Valo.Text, 1, 3, Txt_Valo) Then Exit Sub
         If Obj_Gene.Fun_Erro(Txt_Dscr.Text, 1, 1, Txt_Dscr) Then Exit Sub
-        If Obj_Gene.Fun_Form(Obj_Gene.Fun_Nulo(Txt_Valo.Text), "#,##0.00") = "0,00" Then
+        If Obj_Gene.Fun_Form(Obj_Gene.Fun_Nulo(Txt_Valo.Text), TipoDado.Dinheiro) = "0,00" Then
             MsgBox("Valor inválido!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Erro")
             Exit Sub
         End If
@@ -149,7 +149,7 @@
         End If
         Ado_Auxi.Find("Reci = '" & Str_Reci & "'")
         'Ado_Auxi("Valo").Value = Obj_Gene.Fun_Form(Obj_Gene.Fun_Nulo(Txt_Valo.Text), "#.##0,00")
-        Ado_Auxi("Valo").Value = Obj_Gene.Fun_Form(Obj_Gene.Fun_Nulo(Txt_Valo.Text), "#,##0.00")
+        Ado_Auxi("Valo").Value = Obj_Gene.Fun_Form(Obj_Gene.Fun_Nulo(Txt_Valo.Text), TipoDado.Dinheiro)
         Ado_Auxi("Data").Value = Obj_Gene.Fun_Nulo(Msk_Data.Text)
         Ado_Auxi("Dscr").Value = Obj_Gene.Fun_Nulo(Txt_Dscr.Text)
         Ado_Auxi("Clie").Value = Obj_Gene.Fun_Nulo(Txt_Clie.Text)
@@ -329,7 +329,7 @@
     End Sub
 
     Private Sub Txt_Valo_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_Valo.LostFocus
-        Txt_Valo.Text = Obj_Gene.Fun_Form(Txt_Valo.Text, "#,##0.00")
+        Txt_Valo.Text = Obj_Gene.Fun_Form(Txt_Valo.Text, TipoDado.Dinheiro)
     End Sub
 
     Private Sub Txt_Valo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Txt_Valo.TextChanged

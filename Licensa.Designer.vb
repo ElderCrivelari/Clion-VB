@@ -78,10 +78,10 @@ Partial Class Licensa
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(15, 94)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(549, 75)
+        Me.Label2.Size = New System.Drawing.Size(508, 75)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Para o email: made4usoft@live.com , pois assim iremos gerar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sua chave de acesso" & _
-    "." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Após, insira a chave no espaço abaixo:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label2.Text = "No aplicativo ""Registrar Clion"" que está junto na pasta do " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "aplicativo." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Após, i" &
+    "nsira a chave no espaço abaixo:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label1
         '
@@ -90,9 +90,9 @@ Partial Class Licensa
         Me.Label1.ForeColor = System.Drawing.SystemColors.InfoText
         Me.Label1.Location = New System.Drawing.Point(14, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(243, 31)
+        Me.Label1.Size = New System.Drawing.Size(250, 31)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Envie este código :"
+        Me.Label1.Text = "Utilize este código :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Lbl_Seri

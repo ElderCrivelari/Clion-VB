@@ -1,5 +1,6 @@
 Option Strict Off
 Option Explicit On
+Imports ADODB
 
 Module Obj_Gene
     Private Declare Function GetSystemMetrics Lib "user32.dll" (ByVal nIndex As Long) As Long
@@ -39,9 +40,6 @@ Module Obj_Gene
     Public Glb_Seri As String 'serial
     'Subs e afins 
     Public Culture As New System.Globalization.CultureInfo("pt-BR")
-
-    'Objetos genéricos
-    
 
     Sub Sub_Crec(ByRef Ado_func As ADODB.Recordset, ByRef Str_Pesq As String, Optional ByRef Opt_GPva As Boolean = True)
         Ado_func = New ADODB.Recordset
@@ -148,7 +146,8 @@ Err_Cabr:
         Menus.Cmd_Prnt.Visible = False
         Menus.Cmd_Prim.Visible = False
         Menus.Cmd_Ulti.Visible = False
-       
+
+
 
         'Autoriza os botões
         'Novo
@@ -230,12 +229,7 @@ Err_Cabr:
             Obj_Cont.Text = Str_Text
         End If
     End Sub
-    'Function Fun_Kprs(ByVal keychar As Keys)
-    '    If Keychar = Keys.Enter Then
-    '        SendKeys.Send("{TAB}")
-    '    End If
-    '    Fun_Kprs = 0
-    'End Function
+
     Sub Sub_Kprs(ByVal E As KeyEventArgs)
         If (E.KeyValue = Keys.Enter) Then
             E.SuppressKeyPress = True
@@ -317,12 +311,7 @@ Err_Cabr:
     ''' <remarks></remarks>
     Function Fun_Erro(ByVal Str_Font As String, ByVal Str_Leng As String, ByVal Int_Tipo As Integer, ByVal Obj_Cont As Object) As Boolean
         Dim Int_Loop As Integer
-        'Dim Tms_Time As TimeSpan
-        'Verifica se o campo contém algum erro e coloca ele na tela
-        'TIpos:
-        '1: comprimento mínimo do campo
-        '2: Data
-        '3: Valor ($)
+
         Menus.Err_Prov.SetError(Obj_Cont, "")
         Select Case Int_Tipo
             Case 1
@@ -332,7 +321,7 @@ Err_Cabr:
             Case 2
                 If Not Str_Leng = 2 Then If Trim(Str_Font) = "/  /" Then Exit Function
                 If Len(Str_Font) < 10 Then GoTo Err_Data
-                Str_Font = Obj_Gene.Fun_Form(Str_Font, "dd/MM/yyyy")
+                Str_Font = Obj_Gene.Fun_Form(Str_Font, TipoDado.Data)
                 Exit Select
 Err_Data:
                 Menus.Err_Prov.SetError(Obj_Cont, "Data inválida!")
@@ -378,13 +367,14 @@ Err_Data:
     ''' <param name="Bol_Dire">Impressão direta ou não</param>
     ''' <remarks></remarks>
     Sub Sub_Prnt(ByVal Str_Nome As String, ByVal Str_Sele As String, ByVal Str_Form As String, Optional ByVal Bol_Dire As Boolean = False) ', ByVal Ado_Crys As ADODB.Recordset)
+
         Dim LogonInfo As New CrystalDecisions.Shared.TableLogOnInfo
         Dim Table As CrystalDecisions.CrystalReports.Engine.Table
         Dim Crp_Repo As New CrystalDecisions.CrystalReports.Engine.ReportDocument
         Dim Crp_Conn As New CrystalDecisions.Shared.ConnectionInfo
 
         'limpa o rela
-       
+
         'Imprime o relatório na pasta
         'Configuração de senha (ALTERAR)
         Crp_Conn.ServerName = Obj_Gene.Fun_Banc
@@ -434,8 +424,26 @@ Err_Data:
             End
         End If
     End Sub
-    Function Fun_Form(ByVal Str_Text As String, ByVal Str_Form As String)
-        Fun_Form = Microsoft.VisualBasic.Compatibility.VB6.Format(Str_Text, Str_Form)
+
+
+    Public Enum TipoDado
+        Data
+        Numero
+        Dinheiro
+    End Enum
+
+
+    Function Fun_Form(ByVal Str_Text As String, ByVal tipo As TipoDado) As String
+        Select Case tipo
+            Case TipoDado.Data
+                Return DateTime.Parse(Str_Text).ToString("dd/MM/yyyy")
+            Case TipoDado.Numero
+                Return Double.Parse(Str_Text).ToString("N2")
+            Case TipoDado.Dinheiro
+                Return Decimal.Parse(Str_Text).ToString("#,##0.00")
+            Case Else
+                Return Str_Text
+        End Select
     End Function
     ''' <summary>
     ''' Direção do texto
@@ -604,15 +612,15 @@ Err_Data:
                 Case 0
                     Return ""
                 Case 1 To 19
-                    Dim strArray() As String = _
-                       {"Um", "Dois", "Três", "Quatro", "Cinco", "Seis", _
-                        "Sete", "Oito", "Nove", "Dez", "Onze", _
-                        "Doze", "Treze", "Quatorze", "Quinze", _
+                    Dim strArray() As String =
+                       {"Um", "Dois", "Três", "Quatro", "Cinco", "Seis",
+                        "Sete", "Oito", "Nove", "Dez", "Onze",
+                        "Doze", "Treze", "Quatorze", "Quinze",
                         "Dezesseis", "Dezessete", "Dezoito", "Dezenove"}
                     Return strArray(number - 1) + " "
                 Case 20 To 99
-                    Dim strArray() As String = _
-                        {"Vinte", "Trinta", "Quarenta", "Cinquenta", _
+                    Dim strArray() As String =
+                        {"Vinte", "Trinta", "Quarenta", "Cinquenta",
                         "Sessenta", "Setenta", "Oitenta", "Noventa"}
                     If (number Mod 10) = 0 Then
                         Return strArray(number \ 10 - 2) + " "
@@ -639,15 +647,15 @@ Err_Data:
                 Case 0
                     Return ""
                 Case 1 To 19
-                    Dim strArray() As String = _
-                        {"Um", "Dois", "Três", "Quatro", "Cinco", "Seis", _
-                        "Sete", "Oito", "Nove", "Dez", "Onze", "Doze", _
-                        "Treze", "Quatorze", "Quinze", "Dezesseis", _
+                    Dim strArray() As String =
+                        {"Um", "Dois", "Três", "Quatro", "Cinco", "Seis",
+                        "Sete", "Oito", "Nove", "Dez", "Onze", "Doze",
+                        "Treze", "Quatorze", "Quinze", "Dezesseis",
                         "Dezessete", "Dezoito", "Dezenove"}
                     Return strArray(number - 1) + " "
                 Case 20 To 99
-                    Dim strArray() As String = _
-                        {"Vinte", "Trinta", "Quarenta", "Cinquenta", _
+                    Dim strArray() As String =
+                        {"Vinte", "Trinta", "Quarenta", "Cinquenta",
                         "Sessenta", "Setenta", "Oitenta", "Noventa"}
                     If (number Mod 10) = 0 Then
                         Return strArray(number \ 10 - 2)
@@ -657,8 +665,8 @@ Err_Data:
                 Case 100
                     Return "Cem"
                 Case 101 To 999
-                    Dim strArray() As String = _
-                           {"Cento", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos", _
+                    Dim strArray() As String =
+                           {"Cento", "Duzentos", "Trezentos", "Quatrocentos", "Quinhentos",
                            "Seiscentos", "Setecentos", "Oitocentos", "Novecentos"}
                     If (number Mod 100) = 0 Then
                         Return strArray(number \ 100 - 1) + " "
@@ -832,7 +840,7 @@ Err_Date:
     End Function
     Public Function Fun_Regi() As Boolean
         Dim Str_Valu As String
-        On Error GoTo final
+        On Error GoTo Final
         'Abre a chave do sistema
         Str_Valu = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\ECT", Application.ProductName, "Nada")
 

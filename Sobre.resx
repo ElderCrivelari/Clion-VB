@@ -112,15 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TextBox1.Text" xml:space="preserve">
-    <value>O produto que você está utilizando é protegido pela lei.Caso você tenha comprado o produto , que não tenha sido distribuído pelo site do fabricante ou por algum distribuidor autorizado, exija seus direitos, pois trata-se de uma cópia falsificada. Qualquer outro tipo de venda por distribuição (Suporte não autorizado, distribuição em mídias, venda de assinaturas) é considerado crime.Este software é protegido por leis vigentes em qualquer situação, hipótese ou localização, e se caso por via de regra forem quebradas as restrições do mesmo, o autor do ato será punido visando as mais severas leis da constituição vigente.</value>
+    <value>Olá! Eu criei este software de simples cadastro a anos atrás para venda, porém hoje ele serve mais para estudos, portanto, você pode alterá-lo como quiser! Meu objetivo é utilizá-lo para meu portifolio, mas se quiser aprimorá-lo, fique a vontade! Creditos serão apreciados &lt;3</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBMAEwAAD/7gAOQWRvYmUAZAAAAAAB/+ENOEV4aWYAAE1NACoAAAAIAAcBEgAD

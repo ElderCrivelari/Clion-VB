@@ -6,181 +6,208 @@ CliOn
 </name>
 </assembly>
 <members>
-<member name="M:CliOn.Crypto.MD5Hash(System.String)">
-	<summary> 
- Calcula o MD5 Hash  
- </summary>
-	<param name="value">Chave</param>
-</member><member name="M:CliOn.Crypto.Encrypt(System.String)">
-	<summary> 
- Encripta uma string com base em uma chave 
- </summary>
-	<param name="stringToEncrypt">String a encriptar</param>
-</member><member name="M:CliOn.Crypto.Decrypt(System.String)">
-	<summary> 
- Desencripta uma string com base em uma chave 
- </summary>
-	<param name="encryptedString">String a decriptar</param>
-</member><member name="T:CliOn.Crypto">
-	<summary> 
+<member name="T:CliOn.My.Resources.Resources">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:CliOn.My.Resources.Resources.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:CliOn.My.Resources.Resources.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="T:CliOn.Crypto">
+ <summary> 
  Encriptação simples usando TripleDES 
  (Triple Data Encryption Standard) 
- </summary>
-</member><member name="P:CliOn.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:CliOn.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:CliOn.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="M:CliOn.Obj_Gene.Sub_Menu(System.String,System.String,System.Boolean)">
-	<summary>
+ </summary> 
+</member>
+<member name="M:CliOn.Crypto.MD5Hash(System.String)">
+ <summary> 
+ Calcula o MD5 Hash  
+ </summary> 
+ <param name="value">Chave</param> 
+</member>
+<member name="M:CliOn.Crypto.Encrypt(System.String)">
+ <summary> 
+ Encripta uma string com base em uma chave 
+ </summary> 
+ <param name="stringToEncrypt">String a encriptar</param> 
+</member>
+<member name="M:CliOn.Crypto.Decrypt(System.String)">
+ <summary> 
+ Desencripta uma string com base em uma chave 
+ </summary> 
+ <param name="encryptedString">String a decriptar</param> 
+</member>
+<member name="M:CliOn.Obj_Gene.Sub_Menu(System.String,System.String,System.Boolean)">
+ <summary>
  Ativador de botões do menu principal
  </summary>
-	<param name="Str_Camp">Acesso máximo de cada tela (1-Novo;2-Salv;3-Pesq,4-Del;5 e 6- - Naveg;7-Prnt)</param>
-	<param name="Str_Aces">Acesso permitido ao usuário</param>
-	<param name="Bol_Nave">Permitir visualização? </param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Sub_Limp(System.Boolean)">
-	<summary>
+ <param name="Str_Camp">Acesso máximo de cada tela (1-Novo;2-Salv;3-Pesq,4-Del;5 e 6- - Naveg;7-Prnt)</param>
+ <param name="Str_Aces">Acesso permitido ao usuário</param>
+ <param name="Bol_Nave">Permitir visualização? </param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Sub_Limp(System.Boolean)">
+ <summary>
  Trava e limpa os componentes do form
  </summary>
-	<param name="Bol_Trav">True para travar</param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Sub_Pesq(System.String,System.String)">
-	<summary>
+ <param name="Bol_Trav">True para travar</param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Sub_Pesq(System.String,System.String)">
+ <summary>
  Procedimento de pesquisa
  </summary>
-	<param name="Str_Pesq">Pesquisa SQL para a janela, usar campo AS CODI e nome as DSCR</param>
-	<param name="Str_Capt">Nome da janela de pesquisa</param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Erro(System.String,System.String,System.Int32,System.Object)">
-	<summary>
+ <param name="Str_Pesq">Pesquisa SQL para a janela, usar campo AS CODI e nome as DSCR</param>
+ <param name="Str_Capt">Nome da janela de pesquisa</param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Erro(System.String,System.String,System.Int32,System.Object)">
+ <summary>
  Gerador de erros
  </summary>
-	<param name="Str_Font">Texto a verificar</param>
-	<param name="Str_Leng">Tamanho minimo do campo / Para datas,valor 2 significa não permitir data nula</param>
-	<param name="Int_Tipo">1 - Tamanho / 2 - Data /3 - Valor em R$</param>
-	<param name="Obj_Cont">Objeto onde será mostrado o erro</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Banc">
-	<summary>
+ <param name="Str_Font">Texto a verificar</param>
+ <param name="Str_Leng">Tamanho minimo do campo / Para datas,valor 2 significa não permitir data nula</param>
+ <param name="Int_Tipo">1 - Tamanho / 2 - Data /3 - Valor em R$</param>
+ <param name="Obj_Cont">Objeto onde será mostrado o erro</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Banc">
+ <summary>
  Caminho do banco
  </summary>
-	<returns>Retorna o caminho do banco de dados</returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Sub_Prnt(System.String,System.String,System.String,System.Boolean)">
-	<summary>
+ <returns>Retorna o caminho do banco de dados</returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Sub_Prnt(System.String,System.String,System.String,System.Boolean)">
+ <summary>
  Impressão geral
  </summary>
-	<param name="Str_Nome">Nome do relatório</param>
-	<param name="Str_Sele">String de seleção(Filtro)</param>
-	<param name="Str_Form">Fórmulas do RPT(Jogar um valor via código)</param>
-	<param name="Bol_Dire">Impressão direta ou não</param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Posi(System.String,System.Int32,System.Boolean)">
-	<summary>
+ <param name="Str_Nome">Nome do relatório</param>
+ <param name="Str_Sele">String de seleção(Filtro)</param>
+ <param name="Str_Form">Fórmulas do RPT(Jogar um valor via código)</param>
+ <param name="Bol_Dire">Impressão direta ou não</param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Posi(System.String,System.Int32,System.Boolean)">
+ <summary>
  Direção do texto
  </summary>
-	<param name="Str_Text">O texto a ser analizado</param>
-	<param name="Int_Tama">Tamanho máximo do espaço a ocupar</param>
-	<param name="Bol_Dire">Posição dos espaços em branco. True para o texto cair na esquerda e False pra cair na direita</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Cent(System.String,System.Int32)">
-	<summary>
+ <param name="Str_Text">O texto a ser analizado</param>
+ <param name="Int_Tama">Tamanho máximo do espaço a ocupar</param>
+ <param name="Bol_Dire">Posição dos espaços em branco. True para o texto cair na esquerda e False pra cair na direita</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Cent(System.String,System.Int32)">
+ <summary>
  Centraliza o texto a analizar
  </summary>
-	<param name="Str_Text">O texto para ser analizado</param>
-	<param name="Int_Tama">Que tamanho maximo deve ficar o texto para ser centralizado</param>
-	<returns>Retorna o texto com espaços em branco dos dois lados</returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Spac(System.String,System.Int32)">
-	<summary>
+ <param name="Str_Text">O texto para ser analizado</param>
+ <param name="Int_Tama">Que tamanho maximo deve ficar o texto para ser centralizado</param>
+ <returns>Retorna o texto com espaços em branco dos dois lados</returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Spac(System.String,System.Int32)">
+ <summary>
  Retorna o valor da posição do primeiro espaço antes da ultima palavra
  </summary>
-	<param name="Str_Text">Texto a verificar</param>
-	<param name="Int_Tota">Tamanho máximo do campo</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Nume(System.String)">
-	<summary>
+<param name="Str_Text">Texto a verificar</param>
+ <param name="Int_Tota">Tamanho máximo do campo</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Nume(System.String)">
+ <summary>
  Analiza String e retorna somente os numeros
  </summary>
-	<param name="Str_Nume">String a analizar</param>
-	<returns>Retorna a string com somente os números</returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Tele(System.String)">
-	<summary>
+ <param name="Str_Nume">String a analizar</param>
+ <returns>Retorna a string com somente os números</returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Tele(System.String)">
+ <summary>
  Analiza String e retorna somente os numeros
  </summary>
-	<param name="Str_Nume">String a analizar</param>
-	<returns>Retorna a string com somente os números</returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Exte(System.Decimal)">
-	<summary>
+ <param name="Str_Nume">String a analizar</param>
+ <returns>Retorna a string com somente os números</returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Exte(System.Decimal)">
+ <summary>
  Função principal que recolhe o valor e chama as duas funções
  auxiliares para a parte inteira e para a parte decimal
  </summary>
-	<param name="number">Número a converter para extenso (Reais)</param>
-</member><member name="M:CliOn.Obj_Gene.getDecimal(System.Byte)">
-	<summary>
+ <param name="number">Número a converter para extenso (Reais)</param>
+ 
+</member>
+<member name="M:CliOn.Obj_Gene.getDecimal(System.Byte)">
+ <summary>
  Função auxiliar - Parte decimal a converter
  </summary>
-	<param name="number">Parte decimal a converter</param>
-</member><member name="M:CliOn.Obj_Gene.getInteger(System.Decimal)">
-	<summary>
+ <param name="number">Parte decimal a converter</param>
+</member>
+<member name="M:CliOn.Obj_Gene.getInteger(System.Decimal)">
+ <summary>
  Função auxiliar - Parte inteira a converter
  </summary>
-	<param name="number">Parte inteira a converter</param>
-</member><member name="M:CliOn.Obj_Gene.Sub_Hace(System.String,System.Boolean)">
-	<summary>
+ <param name="number">Parte inteira a converter</param>
+</member>
+<member name="M:CliOn.Obj_Gene.Sub_Hace(System.String,System.Boolean)">
+ <summary>
  Cria um registro com o horário de entrada e saída 
  </summary>
-	<param name="Str_Moti">Motivo da saída se estiver saindo do sistema</param>
-	<param name="Bol_Opti">True se estiver logando, False para logoff</param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Dext(System.String)">
-	<summary>
+ <param name="Str_Moti">Motivo da saída se estiver saindo do sistema</param>
+ <param name="Bol_Opti">True se estiver logando, False para logoff</param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Dext(System.String)">
+ <summary>
  Faz o número de 1 a 12 virar o mês correspondente por extenso
  </summary>
-	<param name="Str_Mont">Mês em numeros de 1 a 12</param>
-	<returns>Nome do mês por extenso</returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Date(System.String)">
-	<summary>
+ <param name="Str_Mont">Mês em numeros de 1 a 12</param>
+ <returns>Nome do mês por extenso</returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Date(System.String)">
+ <summary>
  Verifica se a data é válida
  </summary>
-	<param name="Str_Date">Data a ser verificada</param>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Dmes(System.Int32,System.Int32)">
-	<summary>
+ <param name="Str_Date">Data a ser verificada</param>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Dmes(System.Int32,System.Int32)">
+ <summary>
  função usada para descobrir qual é o dia máximo que um mês pode ter
  </summary>
-	<param name="Int_Data">Mês a ser verificado o ultimo dia</param>
-	<param name="Int_Anoh">Ano corrente do mês a verificar</param>
-	<returns>Retorna o ultimo dia possivel para o mês verificado </returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Seri">
-	<summary>
+ <param name="Int_Data">Mês a ser verificado o ultimo dia</param>
+ <param name="Int_Anoh">Ano corrente do mês a verificar</param>
+ <returns>Retorna o ultimo dia possivel para o mês verificado </returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Seri">
+ <summary>
  Retorna o serial da máquina
  </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CliOn.Obj_Gene.Fun_Inte(System.String)">
-	<summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CliOn.Obj_Gene.Fun_Inte(System.String)">
+ <summary>
  Pesquisa se há conexão com a internet
  </summary>
-	<param name="url">Site a ser conferido</param>
-	<returns></returns>
-	<remarks></remarks>
+ <param name="url">Site a ser conferido</param>
+ <returns></returns>
+ <remarks></remarks>
 </member>
 </members>
 </doc>

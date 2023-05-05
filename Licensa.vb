@@ -1,10 +1,15 @@
-﻿Public Class Licensa
+﻿Imports System.Linq
+Imports System.Threading
+
+Public Class Licensa
 
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         If MsgBox("Deseja mesmo cancelar?", MsgBoxStyle.YesNo + MsgBoxStyle.Information, "Licensa") = MsgBoxResult.Yes Then
-            End
+            ' Encerra o aplicativo
+            Application.Exit()
         End If
+
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
@@ -19,7 +24,7 @@
             Str_Chav = Crypto.Encrypt(Str_Chav)
             Str_Chav = StrReverse(Str_Chav)
         Next
-        
+
 
         If Trim(Txt_Chav.Text) = Trim(Str_Chav) Then
             'Dim Fil_File As New System.IO.FileAttributes
@@ -31,6 +36,7 @@
             End If
             Ado_Auxi("Dcad").Value = Date.Now.Date
             Ado_Auxi.Update()
+            MessageBox.Show("Obrigado por Registrar!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
         Else
             MsgBox("Chave inválida, tente novamente!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Erro")
@@ -41,5 +47,10 @@
     Private Sub Licensa_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Txt_Chav.Text = ""
         Lbl_Seri.Text = Crypto.Decrypt(Glb_Seri)
+    End Sub
+
+    Private Sub Lbl_Seri_Click(sender As Object, e As EventArgs) Handles Lbl_Seri.Click
+        Clipboard.SetText(Lbl_Seri.Text)
+        MessageBox.Show("O texto foi copiado para a área de transferência com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
